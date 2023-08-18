@@ -1,0 +1,58 @@
+.navbar {
+    height: 80px;
+
+    .warpper {
+        padding: 10px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .item {
+            display: flex;
+            align-items: center;
+        }
+
+        .left {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .center {
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+
+        .right {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+
+            .icons {
+                display: flex;
+                color: #777;
+                gap: 15px;
+                cursor: pointer;
+            }
+
+            .carticons {
+                position: relative;
+
+                span {
+                    font-size: 22px;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: blue;
+                    color: white;
+                    display: flex;
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+                }
+            }
+        }
+    }
+}
