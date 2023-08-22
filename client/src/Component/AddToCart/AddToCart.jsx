@@ -6,8 +6,8 @@ const AddToCart = () => {
     let  products=[
         {
             id:1,
-            img:"t1.avif",
-            img2:"t2.avif",
+            img:'/img/w2.jpg',
+            img2:'/img/w8.jpg',
             title:"T-Shirt for Men",
             desc:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio earum placeat ducimus nostrum laborum labore omnis assumenda nihil accusantium!",
             isNew:true,
@@ -16,8 +16,8 @@ const AddToCart = () => {
         },
         {
             id:2,
-            img:"t3.avif",
-            img2:"t2.avif",
+            img:'/img/w3.jpg',
+            img2:'/img/w5.jpg',
             desc:" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio earum placeat ducimus nostrum laborum labore omnis assumenda nihil accusantium!",
             title:"Coat",
             isNew:true,

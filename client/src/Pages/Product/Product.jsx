@@ -4,7 +4,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import "./Product.scss"
 const Product = () => {
-  const images=['/t1.avif','/t2.avif']
+  const images=['/img/w1.jpg','/img/w2.jpg']
   const[selectedImage,setselectedImage]=useState(0)
   const [Quantity,setQuantity]=useState(0)
   return (

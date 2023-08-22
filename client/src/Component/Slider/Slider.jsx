@@ -14,9 +14,9 @@ const Slider = () => {
   return (
       <div className='slider'>
         <div className='container' style={{transform:`translateX(-${currentSlide *100}vw)`}} >
-            <img src='1.avif'/>
-            <img src='2.avif'/>
-            <img src='3.avif'/>
+            <img src='/img/w1.jpg'/>
+            <img src='/img/w4.jpg'/>
+            <img src='/img/w6.jpg'/>
         </div>
         <div className='icons'>
             <div className='icon' onClick={previasSlide}>

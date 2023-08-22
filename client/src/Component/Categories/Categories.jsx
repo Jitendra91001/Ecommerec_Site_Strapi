@@ -6,7 +6,7 @@ const Categories = () => {
         <div className='Categories'>
             <div className='col'>
                 <div className='row'>
-                    <img src='t1.avif' alt='' />
+                    <img src='/img/w3.jpg' alt='' />
                     <button className='link'>
                         <Link to="products/1">
                             Men
@@ -14,7 +14,7 @@ const Categories = () => {
                     </button>
                 </div>
                 <div className='row'>
-                    <img src='t1.avif' alt='' />
+                    <img src='/img/w4.jpg' alt='' />
                     <button>
                         <Link to="products/2">
                             Women
@@ -24,7 +24,7 @@ const Categories = () => {
             </div>
             <div className='col'>
                 <div className='row'>
-                    <img src='t1.avif' alt='' />
+                    <img src='/img/w6.jpg' alt='' />
                     <button>
                         <Link to="products/3">
                             Shoes
@@ -36,7 +36,7 @@ const Categories = () => {
                 <div className='row'>
                     <div className='col'>
                         <div className='row'>
-                            <img src='t1.avif' alt='' />
+                            <img src='/img/w8.jpg' alt='' />
                             <button>
                                 <Link to="products/4">
                                     Clothes
@@ -46,7 +46,7 @@ const Categories = () => {
                     </div>
                     <div className='col'>
                         <div className='row'>
-                            <img src='t1.avif' alt='' />
+                            <img src='/img/w9.jpg' alt='' />
                             <button>
                                 <Link to="products/5">
                                     Men
@@ -57,7 +57,7 @@ const Categories = () => {
                     </div>
                 </div>
                 <div className='row'>
-                    <img src='t1.avif' alt='' />
+                    <img src='/img/p3.jpg' alt='' />
                     <button>
                         <Link to="products/6">
                             Men

@@ -49,7 +49,7 @@ const Products = () => {
         </div>
       </div>
       <div className='right'>
-        <img src='/3.avif' className='catImg'/> 
+        <img src='/img/w3.jpg' className='catImg'/> 
         <List sort={sort} maxprice={maxPrice} cartId={cartId}/>
       </div>
     </div>
