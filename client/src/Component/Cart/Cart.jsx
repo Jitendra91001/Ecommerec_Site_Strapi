@@ -6,14 +6,14 @@ const Cart = ({item}) => {
     <Link to={`/product/${item.id}`} className='link'>
     <div className='cart'>
         <div className='images'>
-            {item.isNew && <span>New Season</span> }
-            <img src={`/${item.img}`} className='MainImage'/>
-            <img src={`/${item.img2}`} className='SecondImage'/>
+            {item?.attributes.isNew && <span>New Season</span> }
+            <img src={`${process.env.REACT_APP_UPLOAD_URL+item?.attributes.img.data.attributes.url}`} className='MainImage'/>
+            <img src={`${process.env.REACT_APP_UPLOAD_URL+item?.attributes.img2.data.attributes.url}`} className='SecondImage'/>
         </div>
-        <h2>{item.title}</h2>
+        <h2>{item?.attributes.Title}</h2>
         <div className='prices'>
-        <h3>${item.OldPrice}</h3>
-        <h3>${item.price}</h3>
+        <h3>${item.OldPrice || item?.attributes.Price +20}</h3>
+        <h3>${item?.attributes.Price}</h3>
         </div>
     </div>
     </Link> 

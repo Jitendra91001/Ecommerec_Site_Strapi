@@ -1,29 +1,46 @@
 import React, { memo, useState } from 'react'
-import "./Products.scss"
 import List from '../../Component/List/List'
 import { useParams } from 'react-router-dom'
+import useFetch from '../../Hooks/useFetch'
+import "./Products.scss"
+
 const Products = () => {
-  const cartId=parseInt(useParams().id)
-  console.log(cartId)
+  const {cartId}=parseInt(useParams())
   const [maxPrice,setMaxPrise]=useState(1000)
   const[sort,setSort]=useState('asc')
+  const[subCategories,setSubcategories]=useState([])
+
+  const {data,error,loding}=useFetch(`sub-categories?[filters][sub-categories][id][$eq]=${cartId}`)
+  
+  const handleChange=(e)=>{
+      const value=e.target.value;
+      const isChecked=e.target.checked;
+      
+      setSubcategories(isChecked ? [...subCategories,value] : subCategories.filter(item=>item !== value))
+  }
+
+  console.log(subCategories)
   return (
     <div className='products'>
       <div className='left'>
         <div className='filterItem'>
           <h2>Product Categories</h2>
-          <div className='inputItem'>
-            <input type="checkbox" value={1} id='1'/>
-            <label htmlFor='1'>Shose</label>
+          {
+            data && data.map(item=>(
+              <div className='inputItem' key={item.id}>
+            <input type="checkbox" value={item.id} id={item.id} onChange={handleChange}/>
+            <label htmlFor={item.id}>{item?.attributes.Title}</label>
           </div>
-          <div className='inputItem'>
+            ))
+          }
+          {/* <div className='inputItem'>
             <input type="checkbox" value={2} id='2'/>
             <label htmlFor='2'>Skart</label>
           </div>
           <div className='inputItem'>
             <input type="checkbox" value={3} id='3'/>
             <label htmlFor='3'>cort</label>
-          </div>
+          </div> */}
         </div>
         <div className='filterItem'>
         <h2>filter by prices</h2>
@@ -50,7 +67,7 @@ const Products = () => {
       </div>
       <div className='right'>
         <img src='/img/w3.jpg' className='catImg'/> 
-        <List sort={sort} maxprice={maxPrice} cartId={cartId}/>
+        <List sort={sort} maxprice={maxPrice} cartId={cartId} subCats={subCategories}/>
       </div>
     </div>
   )
