@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Cart.scss"
 import { Link } from 'react-router-dom'
+import {SwiperSlide } from "swiper/react";
 const Cart = ({item}) => {
   return (
     <Link to={`/product/${item.id}`} className='link'>
+      <SwiperSlide>
     <div className='cart'>
         <div className='images'>
             {item?.attributes.isNew && <span>New Season</span> }
@@ -16,7 +18,8 @@ const Cart = ({item}) => {
         <h3>${item?.attributes.Price}</h3>
         </div>
     </div>
-    </Link> 
+    </SwiperSlide>
+    </Link>
   )
 }
 

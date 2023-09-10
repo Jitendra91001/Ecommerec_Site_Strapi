@@ -1,9 +1,11 @@
 import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import './AddToCart.scss'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import { removeItem, resetCart } from '../../redux/slice/CartSlice';
 const AddToCart = () => {
     const products=useSelector(state=>state.cart.products)
+    const dispatch=useDispatch()
     // let  products=[
     //     {
     //         id:1,
@@ -26,6 +28,12 @@ const AddToCart = () => {
     //         price:25
     //     }
     // ]
+
+    const totalPrice=()=>{
+        let total=0;
+        products.forEach((item)=> total += item.Quantity * item.price)
+        return total.toFixed(2)
+    }
   return (
     <div className='addtocart'>
         <h1>Products in your carts</h1>
@@ -35,18 +43,18 @@ const AddToCart = () => {
                 <div className='details'>
                    <h1>{item.title}</h1>
                    <p>{item.desc.substring(0,100)}</p>
-                   <div className='price'>1 X ${item.price}</div>
+                   <div className='price'>{item.Quantity} X ${item.price}</div>
                 </div>
-                <DeleteIcon className='delete'/>
+                <DeleteIcon className='delete' onClick={()=>dispatch(removeItem(item.id))}/>
             </div>
         ))}
       
         <div className='total'>
             <span>SUBTOTAL</span>
-            <span>$123</span>
+            <span>${totalPrice()}</span>
         </div>
         <button>PROCEED TO CHECKOUT</button>
-        <span className='reset'>reset cart</span>
+        <span className='reset' onClick={()=>dispatch(resetCart())}>reset cart</span>
     </div>
   )
 }
